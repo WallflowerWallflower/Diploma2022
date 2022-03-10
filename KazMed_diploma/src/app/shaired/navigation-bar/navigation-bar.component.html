@@ -1,0 +1,20 @@
+<header><ul>
+  <a routerLink="../home">
+  <img width="40px" height="40px" src="assets/logo2.PNG" alt="kazMed">
+    <li class="li"><p style="color: #00184B">KazMed</p></li></a>
+  <a routerLink="../about" class="alink"><li class="li2">About</li></a>
+  <a routerLink="../service" class="alink"><li class="li2">Services</li></a>
+  <a routerLink="../doctors" class="alink"><li class="li2">Doctors</li></a>
+  <a routerLink="../medcenter" class="alink"><li class="li2">Clinics</li></a>
+  <li class="liB" *ngIf="login()">
+    <button class="login" (click)="signIn()">Login</button>&nbsp;&nbsp;
+    <button class="sign" (click)="signUp()">Get Started</button>
+  </li>
+
+  <li class="liE" *ngIf="!login()">
+    <button class="login" routerLink="../user">User</button>&nbsp;
+    <button class="sign" (click)="exit()">Exit</button>
+  </li>
+</ul></header>
+
+

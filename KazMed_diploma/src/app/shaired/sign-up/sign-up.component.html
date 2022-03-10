@@ -1,0 +1,29 @@
+<div class="cont" [formGroup]="formG">
+  <p class="head">Sign up</p>
+  <div class="box">
+    <p>Name</p>
+    <div>
+      <input type="email" name="" formControlName="name" placeholder="Enter Your name">
+    </div>
+  </div>
+  <div class="box">
+    <p>Surname</p>
+    <div>
+      <input type="email" name="" formControlName="surname" placeholder="Enter Your surname">
+    </div>
+  </div>
+  <div class="box">
+    <p>Email</p>
+    <div>
+      <input type="email" name="" formControlName="email" placeholder="Enter Your email">
+    </div>
+  </div>
+  <div class="box">
+    <p>Password</p>
+    <div>
+      <input type="password" name="" formControlName="password" placeholder="Enter Your password">
+    </div>
+  </div>
+  <button class="signInBtn" (click)="signUp()">Sign up</button>
+  <p class="text">You have acount? <br> <a (click)="signIn()">Sign in</a></p>
+</div>

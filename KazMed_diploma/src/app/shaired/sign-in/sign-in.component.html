@@ -1,0 +1,17 @@
+<form [formGroup]="formG" class="cont">
+  <p class="head">Login</p>
+  <div class="box">
+    <p>Email</p>
+    <div>
+      <input id="email" name="email" formControlName="email" placeholder="Enter Your email">
+    </div>
+  </div>
+  <div class="box">
+    <p>Password</p>
+    <div>
+      <input id="passWord" type="password" name="passWord" formControlName="password" placeholder="Enter Your password">
+    </div>
+  </div>
+  <button class="signInBtn" (click)="login()">Sign in</button>
+  <p class="text">Don't have acount?<br><a (click)="signUp()">Sign up</a></p>
+</form>

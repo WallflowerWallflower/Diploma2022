@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.btn1{
+    text-decoration: none;
+    padding: 10px 30px 10px 30px;
+    font-size: 22px;
+    border: 1px solid #414BBE;
+    border-radius: 7px;
+    margin-left: 10%;
+    color: white;
+    background: #414BBE;
+    cursor: pointer;
+  }
+
+  .btn1:hover{
+    background: white;
+    color: #00184B;
+    border: 1px solid #414BBE;
+  }
+
+  p, input {
+    font-weight: 400;
+}
+
+
+div, p, input, button, form, span, a, ul, li {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 900;
+}

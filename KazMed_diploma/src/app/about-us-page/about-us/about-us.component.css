@@ -1,0 +1,79 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("src/assets/mont.ttf");
+}
+
+.mainDiv{
+  font-family: Montserrat;
+}
+
+.title{
+  color: #00184B;
+  font-family: Montserrat;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.info{
+  padding-top: 2%;
+  width: 100%;
+  display: flex;
+}
+
+.cont img{
+  padding-left: 5%;
+  height: 300px;
+  width: 400px;
+}
+
+.cont p{
+  color: #00184B;
+  font-size: 17px;
+  margin-left: 8%;
+  margin-right: 5%;
+  line-height: 1.8em;
+}
+
+.stat{
+  margin-left: 10%;
+}
+
+.trust{
+  padding-top: 20px;
+  margin-left: 25%;
+  margin-right: 15%;
+}
+
+.trust h1{
+  font-family: Montserrat;
+}
+
+.sta{
+  font-family: Montserrat;
+  border-radius: 5px;
+  padding-left: 1%;
+  display: inline-block;
+  padding-right: 4%;
+  color: white;
+}
+
+.sta p{
+  font-family: Montserrat;
+  font-size: 16px;
+}
+
+.dev{
+  color: #00184B;
+  text-align: center;
+}
+
+.dev h1{
+  font-family: Montserrat;
+  font-size: 36px;
+}
+
+.dev p{
+  font-family: Montserrat;
+  font-size: 16px;
+}

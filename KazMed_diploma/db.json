@@ -1,0 +1,107 @@
+{
+  "users": [
+    {
+      "name": "shynggys",
+      "surname": "yerkyn",
+      "email": "s.erkyn00@gmail.com",
+      "password": "serkyn00",
+      "id": 5
+    },
+    {
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "password": "password",
+      "id": 6
+    },
+    {
+      "name": "ASDF",
+      "surname": "ASDF",
+      "email": "ASDF",
+      "password": "ASDF",
+      "id": 7
+    },
+    {
+      "name": "QWE",
+      "surname": "QWE",
+      "email": "QWE",
+      "password": "QWE",
+      "id": 8
+    },
+    {
+      "name": "ZXCV",
+      "surname": "ZXCV",
+      "email": "ZXCV",
+      "password": "ZXCV",
+      "id": 9
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "",
+      "password": "",
+      "id": 10
+    },
+    {
+      "name": "QWERT",
+      "surname": "QWERT",
+      "email": "QWERT",
+      "password": "QWERT",
+      "id": 11
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "adminName": "admin",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "adminName": "admin1",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "adminName": "admin2",
+      "password": "password"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "nameRole": "Family"
+    },
+    {
+      "id": 2,
+      "nameRole": "Individual"
+    },
+    {
+      "id": 3,
+      "nameRole": "Student"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 5,
+      "name": "Belivier",
+      "Author": "Imagine Dragons",
+      "Year": "2018",
+      "min": "3:14"
+    },
+    {
+      "id": 7,
+      "name": "Bat at Love",
+      "Author": "Halsey",
+      "Year": "2018",
+      "min": "2:46"
+    },
+    {
+      "name": "Graveyard",
+      "Author": "Halsey",
+      "Year": "2020",
+      "min": "3:14",
+      "id": 9
+    }
+  ]
+}

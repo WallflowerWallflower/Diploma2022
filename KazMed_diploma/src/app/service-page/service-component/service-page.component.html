@@ -1,0 +1,40 @@
+<div class="content">
+  <div class="card-content">
+    <h1 style="font-size: 24px; font-weight: 600;">Top Doctors</h1>
+    <span style="font-weight: 500; font-size: 14px; color: #CBD1DA;">4 results</span>
+    <div *ngFor="let card of dataCard; let i = index" class="cart unselectable" >
+      <img
+        style="width: 105px; height: 99.7px; border-radius: 8px"
+        src="/assets/person2.png"
+        alt="women"
+      />
+      <div class="info">
+        <h1 style="font-size: 14px; font-weight: 600">{{card.fullname}}</h1>
+        <span style="font-size: 14px; font-weight: 500; color: #9298a9">
+          {{card.class}}
+        </span>
+        <div class="location">
+          <img
+            style="width: 10px; margin-right: 12px"
+            src="/assets/location.png"
+            alt="location"
+          />
+          <span style="font-size: 12px; color: #9298a9; font-weight: 400">
+            4km away
+          </span>
+        </div>
+        <div class="rating">
+          <img src="/assets/rating.png" alt="rating" />
+          <span>4.7</span>
+        </div>
+      </div>
+      <div class="connect">
+        <div class="message" style="margin-right: 20px; margin-left: 35px;">
+          <img src="/assets/message.png" alt="message" />
+        </div>
+        <a class="btn2 unselectable">Book an appointment</a>
+      </div>
+    </div>
+  </div>
+  <div class="cart-show"></div>
+</div>

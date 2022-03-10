@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("src/assets/mont.ttf");
+}
+
+.mainDiv{
+  font-family: Montserrat;
+}
+
+.doc{
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.doc h1{
+  font-family: Montserrat;
+  color: #00184B;
+}
