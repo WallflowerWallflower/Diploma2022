@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #00184B;
+  margin: 0;
+}
+
+.mat-h1, .mat-headline, .mat-typography h1 {
+  margin-bottom: 0;
+}
+
+.cart-display {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  
+  .cart-d {
+    display: flex;
+    width: 350px;
+    padding: 10px;
+    box-shadow: 0px 30px 60px rgba(138, 149, 158, 0.12);
+    border-radius: 10px;
+    margin-bottom: 35px;
+    transition: all 0.2s ease-in;
+  }
+  
+  
+  .show-details {
+    margin: 0;
+    padding: 20px 25px;
+  }
+  
+  .font-info {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9298A9;
+  }
+  
+  .qualifications {
+    margin-top: 50px;
+  }
+  
+  .services {
+    margin-top: 50px;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+  }
+  
+
+
+  /* do not touch */
+  
+  .cart:hover {
+    transform: translateY(-2px);
+  }
+  
+  .cart-contents {
+    max-width: 531px;
+  }
+  
+  /* don't touch this info! */
+  
+  
+  .location {
+    width: 85px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .message {
+    width: 36px;
+    height: 36px;
+    padding: 8px 8px;
+    border-radius: 8px;
+    background-color: #414BBE1F;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .message:hover {
+    background-color: #969bdd54;
+  }
+  
+  .btn2 {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    width: 175px;
+    height: 36px;
+    padding: 8px 3px;
+    font-size: 16px;
+    border: 1px solid #414BBE;
+    border-radius: 8px;
+    color: white;
+    background: #414BBE;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn2:hover {
+    background: white;
+    color: #00184B;
+    border: 1px solid #414BBE;
+  }
+  
+  .rating {
+    padding: 5px 5px;
+    background: #414BBE1F;
+    border-radius: 4px;
+  }
+  
+  .rating:hover {
+    background-color: #969bdd54;
+  }
+  
+  img {
+    margin-right: 20px;
+  }
+  
+  .unselectable {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    -khtml-user-select: none;
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    not supported by any browser */
+  }
+  
+  span {
+    font-weight: bold;
+    font-size: 10px;
+  }
+  
+  .connect {
+    display: flex;
+    margin-left: 21px;
+    align-items: flex-end;
+  }

@@ -9,10 +9,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 import { ServicePageComponent } from './service-page/service-component/service-page.component';
+
+import {MatSelectModule} from '@angular/material/select';
+import { DisplayShowComponentComponent } from './service-page/display-show-component/display-show-component.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ServicePageComponent
+    ServicePageComponent,
+    DisplayShowComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +26,8 @@ import { ServicePageComponent } from './service-page/service-component/service-p
     ShairedModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
