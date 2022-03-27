@@ -34,11 +34,8 @@ export type ReviewType = {
   styleUrls: ['./service-page.component.css'],
 })
 export class ServicePageComponent implements OnInit {
+  public valueOptions: string[] = ['rating', 'increase', 'decrease'];
 
-  public rating: any;
-  public increase: any;
-  public decrease: any;
-  
   public dataSelect$: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
   dataCard: any = [];
@@ -51,36 +48,65 @@ export class ServicePageComponent implements OnInit {
     this.reqService.getUsers().subscribe((data: any) => {
       this.dataCard = data;
     });
-
   }
 
-  sortByAZ(value: any) {
-    switch(value) {
-      case "rating":
-        console.log(value)
-        break
-      case "increase":
-        console.log(value)
-        break
-      case "decrease":
-        console.log(value)
-        break
+  sortBySelect(value: string): any {
+    const dataSorting$ = of(this.dataCard);
+    switch (value) {
+      case 'rating':
+        dataSorting$
+          .pipe(
+            map((items: any) => {
+              let ratesSort: any = [];
+              items.map((item: any) => {
+                ratesSort.push(item);
+              });
+              ratesSort.sort((a: any, b: any): any =>
+                a.rating < b.rating ? -1 : 1
+              );
+              return ratesSort;
+            })
+          )
+          .subscribe((ratesNext) => this.dataCard = ratesNext);
+        break;
+      case 'increase':
+        dataSorting$
+          .pipe(
+            map((items: any) => {
+              let namesSort: string[] = [];
+              items.map((item: any) => {
+                namesSort.push(item);
+              });
+              namesSort.sort((a: any, b: any): any =>
+                a.fullname < b.fullname ? -1 : 1
+              );
+              return namesSort;
+            })
+          )
+          .subscribe((nextInc) => (this.dataCard = nextInc));
+        break;
+      case 'decrease':
+        console.log(value);
+        break;
       default:
-        return value
+        return value;
     }
   }
 
   onSelect(id: number) {
-    this.reqService.getUsers().pipe(
-      map((item) => {
-        let ids: any = [];
-        item.map((el: any) => {
-          if(el.id === id) {
-            ids.push(el)
-          }
+    this.reqService
+      .getUsers()
+      .pipe(
+        map((item) => {
+          let ids: any = [];
+          item.map((el: any) => {
+            if (el.id === id) {
+              ids.push(el);
+            }
+          });
+          return ids;
         })
-        return ids;
-      }),
-    ).subscribe(data => this.cardDetails = data);
+      )
+      .subscribe((data) => (this.cardDetails = data));
   }
 }

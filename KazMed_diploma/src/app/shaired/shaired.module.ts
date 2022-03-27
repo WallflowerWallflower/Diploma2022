@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NavigationBarComponent} from "./navigation-bar/navigation-bar.component";
 import {SignInComponent} from "./sign-in/sign-in.component";
@@ -8,7 +8,18 @@ import { FooterComponent } from './footer/footer.component';
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 
+import { TuiNotificationModule, TUI_NOTIFICATION_DEFAULT_OPTIONS,
+  TUI_NOTIFICATION_OPTIONS,
+  TuiNotification, } from "@taiga-ui/core";
 
+const NOTIFICATIONS_OPTIONS: Provider = {
+  provide: TUI_NOTIFICATION_OPTIONS,
+  useValue: {
+    ...TUI_NOTIFICATION_DEFAULT_OPTIONS,
+    status: TuiNotification.Error,
+    hasIcon: true,
+  }
+}
 
 @NgModule({
   declarations: [
@@ -27,9 +38,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     MatDialogModule,
     RouterModule,
-    ReactiveFormsModule
-
-
-  ]
+    ReactiveFormsModule,
+    TuiNotificationModule
+  ],
+  providers: [NOTIFICATIONS_OPTIONS]
 })
 export class ShairedModule { }

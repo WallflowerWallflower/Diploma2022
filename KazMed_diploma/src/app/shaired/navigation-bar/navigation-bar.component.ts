@@ -18,8 +18,8 @@ export class NavigationBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(): boolean{
-    return this.auth.checkNav();
+  login(): boolean {
+    return this.auth.isAuthenticated();
   }
 
   signIn(){
@@ -29,7 +29,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   exit(){
-    this.auth.logout();
+    return this.auth.logout();
   }
 
   signUp(){

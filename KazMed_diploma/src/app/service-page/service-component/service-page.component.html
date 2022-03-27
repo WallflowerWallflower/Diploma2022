@@ -12,10 +12,7 @@
         <mat-form-field appearance="legacy">
           <mat-label>Sort by:</mat-label>
           <mat-select disableRipple>
-            <mat-option [value]="rating">Rating</mat-option>
-            <mat-option [value]="decrease">Price (decrease)</mat-option>
-            <mat-option [value]="increase">Price (increase)</mat-option>
-            <mat-option>Experience</mat-option>
+            <mat-option (click)="sortBySelect(option)" *ngFor="let option of valueOptions" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

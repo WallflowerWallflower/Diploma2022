@@ -3,10 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-display-show-component',
   templateUrl: './display-show-component.component.html',
-  styleUrls: ['./display-show-component.component.css']
+  styleUrls: ['./display-show-component.component.css'],
 })
 export class DisplayShowComponentComponent implements OnInit {
-
   @Input() fullname: any;
 
   @Input() class: any;
@@ -17,9 +16,7 @@ export class DisplayShowComponentComponent implements OnInit {
 
   @Input() services: string[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

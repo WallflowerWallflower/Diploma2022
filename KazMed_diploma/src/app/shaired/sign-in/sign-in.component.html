@@ -1,4 +1,12 @@
-<form [formGroup]="formG" class="cont">
+<form [formGroup]="form" (ngSubmit)="login()" class="cont">
+  <div class="errors">
+  <tui-notification *ngIf="auth.error$ | async as error" status="error">
+    {{error}}
+  </tui-notification>
+  <!-- <tui-notification *ngIf="message$ | async as message" status="warning">
+    {{message}}
+  </tui-notification> -->
+</div>
   <p class="head">Login</p>
   <div class="box">
     <p>Email</p>
@@ -12,6 +20,6 @@
       <input id="passWord" type="password" name="passWord" formControlName="password" placeholder="Enter Your password">
     </div>
   </div>
-  <button class="signInBtn" (click)="login()">Sign in</button>
+  <button class="signInBtn">Sign in</button>
   <p class="text">Don't have acount?<br><a (click)="signUp()">Sign up</a></p>
 </form>

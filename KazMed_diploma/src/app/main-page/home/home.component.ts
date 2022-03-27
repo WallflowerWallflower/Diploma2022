@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   check(){
-    if(!this.auth.checkNav()){
+    if(!this.auth.isAuthenticated()){
       this.router.navigate(['../doctors']);
     } else {
       alert("Please login");

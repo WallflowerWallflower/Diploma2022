@@ -16,6 +16,13 @@
   padding: 3em;
 }
 
+.errors {
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .head{
   font-size: 30px;
   margin-bottom: 1.3em;
