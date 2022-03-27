@@ -13,6 +13,8 @@ import { ServicePageComponent } from './service-page/service-component/service-p
 import {MatSelectModule} from '@angular/material/select';
 
 import { DisplayShowComponentComponent } from './service-page/display-show-component/display-show-component.component';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { ClinicDisplayComponent } from './clinics/clinic-display/clinic-display.component';
 
 import { AuthInterceptor } from './AuthInterceptor';
 
@@ -26,7 +28,9 @@ const INTERCEPTOR_PROVIDER: Provider = {
   declarations: [
     AppComponent,
     ServicePageComponent,
-    DisplayShowComponentComponent
+    DisplayShowComponentComponent,
+    ClinicsComponent,
+    ClinicDisplayComponent
   ],
   imports: [
     BrowserModule,

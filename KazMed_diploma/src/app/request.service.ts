@@ -7,13 +7,18 @@ import {Observable} from "rxjs";
 })
 export class RequestService {
 
-  private readonly url = 'http://localhost:4000/api/doctors'
+  private readonly urlDoctors = 'http://localhost:4000/api/doctors'
+  private readonly urlClinics = 'http://localhost:4000/api/clinics'
 
   constructor(private http: HttpClient) {
   }
 
-  getUsers(): Observable<any> {
-    return this.http.get(this.url);
+  getDoctors(): Observable<any> {
+    return this.http.get(this.urlDoctors);
+  }
+
+  getClinics(): Observable<any> {
+    return this.http.get(this.urlClinics);
   }
 
   getAllUsers(): Observable<any> {

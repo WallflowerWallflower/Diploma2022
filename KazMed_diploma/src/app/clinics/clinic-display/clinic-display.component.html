@@ -1,0 +1,53 @@
+<div class="cart-display">
+    <div style="cursor: pointer" class="cart-d unselectable">
+      <img
+        style="width: 105px; height: 99.7px; border-radius: 8px"
+        src="/assets/clinic1.png"
+        alt="women"
+      />
+      <div class="info">
+        <h1 style="font-size: 14px; font-weight: 600">{{fullname}}</h1>
+        <span style="font-size: 14px; font-weight: 500; color: #9298a9">
+          {{class}}
+        </span>
+        <div class="location">
+          <img
+            style="width: 10px; margin-right: 12px"
+            src="/assets/location.png"
+            alt="location"
+          />
+          <span style="font-size: 12px; color: #9298a9; font-weight: 400">
+            4km away
+          </span>
+        </div>
+        <div class="rating">
+          <img src="/assets/rating.png" alt="rating" />
+          <span>{{rate}}</span>
+        </div>
+      </div>
+      <div class="connect">
+        <div class="message" style="margin-right: 20px; margin-left: 35px">
+          <img src="/assets/favorite.png" alt="message" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="show-details">
+    <div class="about">
+      <h1 style="font-weight: 600; font-size: 14px; color: #00184B;">About</h1>
+      <span class="font-info"
+        >{{about}}</span
+      >
+    </div>
+    <div class="qualifications">
+      <h1 style="font-weight: 600; font-size: 14px; color: #00184B;">Admission Fee:</h1>
+      <li class="font-info">Reception at the clinic ............................................................................................................... 10 000</li>
+      <li class="font-info">Online consultation ............................................................................................................... 8 000</li>
+    </div>
+    <div class="services">
+      <h1 style="font-weight: 600; font-size: 14px; color: #00184B;">Services</h1>
+      <li *ngFor="let text of services" class="font-info">{{text}}</li>
+    </div>
+    <div class="doctors"><h1 style="font-weight: 600; font-size: 14px; color: #00184B;">Doctors</h1></div>
+    <div class="fees"><h1 style="font-weight: 600; font-size: 14px; color: #00184B;">Reviews</h1></div>
+  </div>

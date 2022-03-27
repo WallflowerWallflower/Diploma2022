@@ -1,0 +1,75 @@
+<div class="content">
+    <div class="card-content">
+      <!-- Top clinics text and sort items func -->
+      <div class="flex">
+        <div class="big-text">
+          <h1 style="font-size: 24px; font-weight: 600">Top Clinics</h1>
+          <span style="font-weight: 500; font-size: 14px; color: #cbd1da"
+            >4 results</span
+          >
+        </div>
+        <div class="sort-items">
+          <mat-form-field appearance="legacy">
+            <mat-label>Sort by:</mat-label>
+            <mat-select disableRipple>
+              <mat-option (click)="sortBySelect(option)" *ngFor="let option of valueOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- item cards -->
+      <div
+        *ngFor="let card of dataCard"
+        (click)="onSelect(card.id)"
+        style="cursor: pointer"
+        class="cart unselectable"
+      >
+        <img
+          style="width: 105px; height: 99.7px; border-radius: 8px"
+          src="/assets/clinic1.png"
+          alt="women"
+        />
+        <div class="info">
+          <h1 style="font-size: 14px; font-weight: 600">{{ card.fullname }}</h1>
+          <span style="font-size: 14px; font-weight: 500; color: #9298a9">
+            {{ card.class }}
+          </span>
+          <div class="location">
+            <img
+              style="width: 10px; margin-right: 12px"
+              src="/assets/location.png"
+              alt="location"
+            />
+            <span style="font-size: 12px; color: #9298a9; font-weight: 400">
+              4km away
+            </span>
+          </div>
+          <div class="rating">
+            <img src="/assets/rating.png" alt="rating" />
+            <span>{{card.rating}}</span>
+          </div>
+        </div>
+        <div class="connect">
+          <div class="message" style="margin-right: 20px; margin-left: 35px">
+            <img src="/assets/message.png" alt="message" />
+          </div>
+          <a class="btn2 unselectable">More about clinic</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- show display on click -->
+    <div class="cart-show">
+      <div *ngFor="let cart of cardDetails" class="for">
+        <app-clinic-display
+          [fullname]="cart.fullname"
+          [class]="cart.class"
+          [rate]="cart.rating"
+          [about]="cart.additionalInfo.about"
+          [services]="cart.additionalInfo.services"
+        ></app-clinic-display>
+      </div>
+    </div>
+  </div>
+  

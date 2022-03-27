@@ -1,39 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { BehaviorSubject, filter, find, map, of } from 'rxjs';
-import { RequestService } from 'src/app/request.service';
-
-export type DoctorType = {
-  fullname: string;
-  class: string; // type of doctor
-  email: string;
-  address?: {
-    longitude: string;
-    latitude: string;
-  };
-  rating: number;
-  profileImgUrl?: string;
-  additionalInfo: {
-    about?: string;
-    qualifications?: string[];
-    services?: string[];
-    reviews: ReviewType[];
-    fees?: any;
-  };
-};
-
-export type ReviewType = {
-  username: string;
-  comment: string;
-  datePublish: Date;
-};
+import { BehaviorSubject, map, of } from 'rxjs';
+import { RequestService } from '../request.service';
 
 @Component({
-  selector: 'app-service-page',
-  templateUrl: './service-page.component.html',
-  styleUrls: ['./service-page.component.css'],
+  selector: 'app-clinics',
+  templateUrl: './clinics.component.html',
+  styleUrls: ['./clinics.component.css']
 })
-export class ServicePageComponent implements OnInit {
+export class ClinicsComponent implements OnInit {
+
   public valueOptions: string[] = ['rating', 'increase', 'decrease'];
 
   public dataSelect$: BehaviorSubject<any> = new BehaviorSubject<any>([]);
@@ -45,7 +20,7 @@ export class ServicePageComponent implements OnInit {
   constructor(private reqService: RequestService) {}
 
   ngOnInit(): void {
-    this.reqService.getDoctors().subscribe((data: any) => {
+    this.reqService.getClinics().subscribe((data: any) => {
       this.dataCard = data;
     });
   }
@@ -95,7 +70,7 @@ export class ServicePageComponent implements OnInit {
 
   onSelect(id: number) {
     this.reqService
-      .getDoctors()
+      .getClinics()
       .pipe(
         map((item) => {
           let ids: any = [];
@@ -109,4 +84,5 @@ export class ServicePageComponent implements OnInit {
       )
       .subscribe((data) => (this.cardDetails = data));
   }
+
 }
