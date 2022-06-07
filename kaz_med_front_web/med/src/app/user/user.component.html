@@ -1,0 +1,45 @@
+<main class="profile-main">
+<span class="profile-nav__link mb-20">Введите свои новые  персональные данные</span>
+<form [formGroup]="editForm" class="profile-main__left" (ngSubmit)="onSubmit()">
+  <div class="profile-info">
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="text" class="input-reset profile-info__input" formControlName="name"
+               placeholder="Не менее из 3 букв">
+        <label class="profile-info__label">First name</label
+        >
+      </div>
+      <div class="profile-info__field">
+        <input type="text" class="input-reset profile-info__input" formControlName="lastName"
+               placeholder="Не менее из 3 букв">
+        <label class="profile-info__label">Last name</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="email" class="input-reset profile-info__input" formControlName="email"
+               placeholder="mail@mail.com">
+        <label class="profile-info__label">Email</label>
+      </div>
+      <div class="profile-info__field">
+        <input type="tel" class="input-reset profile-info__input" formControlName="tel"
+               placeholder="87015552233">
+        <label  class="profile-info__label">Phone number</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="address" class="input-reset profile-info__input" formControlName="address"
+               placeholder="mail@mail.com">
+        <label class="profile-info__label">Address</label>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn-basic p-15 mt-10" [class.disabled]="!editForm.valid" [disabled]="editForm.invalid" >
+    Save
+  </button>
+</form>
+</main>
+
+
+

@@ -1,0 +1,53 @@
+@import "src/style_components/card-info";
+@import "src/style_components/search-results";
+.doctors {
+  padding: 36px 0;
+  font-family: "Poppins", sans-serif;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.doctors-favorite {
+  position: absolute;
+  right: 11px;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  fill: var(--color-blue);
+  background-color: rgb(65 75 190 / 12%);
+
+  &__ico {
+    width: 20px;
+    height: 20px;
+    fill: inherit;
+  }
+}
+.card-info__btn{
+  width: 241px;
+}
+.profile-info__input--big{
+  border: 1px solid #414BBEFF;
+  border-radius: 4px;
+  padding-left: 16px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-black);
+  background-color: rgb(0 0 0 / 0%);
+  height: 120px;
+  resize: vertical;
+}
+.disabled{
+
+  opacity: 0.5;
+
+
+}
+

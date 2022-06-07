@@ -1,0 +1,134 @@
+<span class="profile-nav__link mb-20">Введите свои новые  персональные данные</span>
+<form [formGroup]="editForm" class="profile-main__left" (ngSubmit)="onSubmit()">
+  <div class="profile-info">
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="text" class="input-reset profile-info__input" formControlName="name"
+               placeholder="Не менее из 3 букв">
+        <label class="profile-info__label">First name</label
+        >
+      </div>
+      <div class="profile-info__field">
+        <input type="text" class="input-reset profile-info__input" formControlName="lastName"
+               placeholder="Не менее из 3 букв">
+        <label class="profile-info__label">Last name</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="email" class="input-reset profile-info__input" formControlName="email"
+               placeholder="mail@mail.com">
+        <label class="profile-info__label">Email</label>
+      </div>
+      <div class="profile-info__field">
+        <input type="fees" class="input-reset profile-info__input" formControlName="fees" value="" id=""
+               placeholder="Вводите только цифры (7000, 5000)">
+        <label  class="profile-info__label">Fees</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <input type="tel" class="input-reset profile-info__input" formControlName="tel"
+               placeholder="87015552233">
+        <label  class="profile-info__label">Phone number</label>
+      </div>
+      <div class="profile-info__field">
+        <input type="address" class="input-reset profile-info__input" formControlName="address"
+               placeholder="Название адреса">
+        <label  class="profile-info__label">Address</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field">
+        <select class="input-reset profile-info__input"formControlName="workFrom">
+          <option value="" class="profile-info__label" disabled>Choose time</option>
+          <option class="profile-info__label">09:00</option>
+          <option class="profile-info__label">10:00</option>
+          <option class="profile-info__label">11:00</option>
+          <option class="profile-info__label">12:00</option>
+          <option class="profile-info__label">14:00</option>
+          <option class="profile-info__label">15:00</option>
+          <option class="profile-info__label">16:00</option>
+          <option class="profile-info__label">17:00</option>
+          <option class="profile-info__label">18:00</option>
+        </select>
+        <label  class="profile-info__label">Work from</label>
+      </div>
+      <div class="profile-info__field">
+        <select class="input-reset profile-info__input"formControlName="workTo">
+          <option value="" class="profile-info__label" disabled>Choose time</option>
+          <option class="profile-info__label">09:00</option>
+          <option class="profile-info__label">10:00</option>
+          <option class="profile-info__label">11:00</option>
+          <option class="profile-info__label">12:00</option>
+          <option class="profile-info__label">14:00</option>
+          <option class="profile-info__label">15:00</option>
+          <option class="profile-info__label">16:00</option>
+          <option class="profile-info__label">17:00</option>
+          <option class="profile-info__label">18:00</option>
+        </select>
+        <label  class="profile-info__label">Work to</label>
+      </div>
+    </div>
+<!--    <div class="profile-info__row">-->
+<!--      <div class="profile-info__field">-->
+<!--        <label  class="profile-info__label"></label>-->
+<!--        <select class="input-reset profile-info__input" *ngFor="let clinic of clinics" formControlName="clinic">-->
+<!--          <option value="" class="profile-info__label" disabled>Choose clinic</option>-->
+<!--          <option class="profile-info__label">{{clinic.medCenterName}}</option>-->
+<!--          <option class="profile-info__label">Test</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="profile-info__row">
+      <div class="profile-info__field profile-info__field--big">
+              <textarea formControlName="about"
+                        class="input-reset profile-info__input profile-info__input--big" placeholder="Ввведите данные о себе"></textarea>
+        <label class="profile-info__label">About</label>
+      </div>
+    </div>
+    <div class="profile-info__row">
+      <div class="profile-info__field profile-info__field--big">
+              <textarea formControlName="quality"
+                        class="input-reset profile-info__input profile-info__input--big"placeholder="Ввведите данные о квалификации"></textarea>
+        <label  class="profile-info__label">Qualification</label>
+      </div>
+    </div>
+<!--    <div class="profile-info__row">-->
+<!--      <div class="profile-info__field profile-info__field&#45;&#45;big">-->
+<!--              <textarea formControlName="service"-->
+<!--                        class="input-reset profile-info__input profile-info__input&#45;&#45;big" ></textarea>-->
+<!--        <label class="profile-info__label">Services</label>-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+  <button type="submit" class="btn-basic p-15 mt-10" [class.disabled]="!editForm.valid" [disabled]="editForm.invalid" >
+    Save
+  </button>
+</form>
+<div class="profile-main__right" *ngIf="!patients">
+  <h2 class="profile-header__welcome">No registered patients!</h2>
+</div>
+<!--<div class="profile-main__right">-->
+<!--  <form>-->
+<!--    <mat-form-field>-->
+<!--      <input matInput [matDatepicker]="picker" placeholder="Choose a date"-->
+<!--      >-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker></mat-datepicker>-->
+<!--    </mat-form-field>-->
+<!--  </form>-->
+<!--  <div class="profile-timetable" >-->
+<!--    <ul class="list-reset profile-timetable__list" *ngFor="let patient of patients">-->
+<!--      <li class="profile-timetable__item">-->
+<!--        <span class="profile-timetable__time"></span>-->
+<!--        <div class="profile-timetable__content">-->
+<!--          <p class="profile-timetable__name"></p>-->
+<!--          <p class="profile-timetable__hours">{{patient.time}}, {{patient.date}} </p>-->
+<!--        </div>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+
+

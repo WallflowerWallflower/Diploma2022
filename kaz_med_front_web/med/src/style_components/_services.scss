@@ -1,0 +1,49 @@
+.services {
+  padding-top: 120px;
+  padding-bottom: 275px;
+  background-image: url("../img/services-bg.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+
+  &__descr {
+    margin: 0 auto;
+    margin-bottom: 90px;
+    max-width: 952px;
+  }
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 60px;
+
+  &__item {
+    grid-column: 3 span;
+    border-radius: 15px;
+    padding: 28px 14px 18px 16px;
+    box-shadow: 0 30px 60px rgb(138 149 158 / 12%);
+    background-color: var(--color-light);
+  }
+
+  &__img {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 19px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--color-black);
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 162.69%;
+    color: var(--color-gray);
+  }
+}

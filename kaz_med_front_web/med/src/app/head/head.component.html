@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container header__container">
+    <a href="#" class="header__home-link">
+      <img src="assets/svg/logo.svg" alt="Logo" class="header__logo">
+      <span class="header__company-name">KazMed</span>
+    </a>
+    <nav class="header-nav" >
+      <a routerLink="about" class="header-nav__item">{{ 'About' | translate }}</a>
+      <a routerLink="./services" class="header-nav__item"  >
+        {{ 'Services' | translate }}
+<!--        <img alt="" class="header-nav__ico" src="assets/svg/bottom-arrow.svg">-->
+      </a>
+      <a routerLink="./doctors" class="header-nav__item">{{ 'Doctors' | translate }}</a>
+      <a routerLink="./clinics" class="header-nav__item">{{ 'Clinics' | translate }}</a>
+    </nav>
+    <div class="header-auth" *ngIf="!isLogged">
+      <a routerLink="/login_page" class="header-auth__login">{{ 'Login' | translate }}</a>
+      <a routerLink="/reg_page" class="header-auth__register btn-basic">{{ 'Get started' | translate }}</a>
+    </div>
+    <div class="header-auth" *ngIf="isLogged">
+      <a routerLink="/user" class="header-auth__login" *ngIf="currentUser">{{currentUser.customerName}}</a>
+      <button class="header-auth__register btn-basic" (click)="logout()">{{ 'Logout' | translate }}</button>
+    </div>
+
+    <nav class="header-nav">
+      <button  class="lang" (click)="switchLang('en')">EN</button>
+      <button  class="lang" (click)="switchLang('kz')">KZ</button>
+      <button  class="lang"(click)="switchLang('rus')">RUS</button>
+    </nav>
+  </div>
+</header>
+<router-outlet></router-outlet>

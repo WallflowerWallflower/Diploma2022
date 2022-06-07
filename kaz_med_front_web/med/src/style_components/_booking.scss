@@ -1,0 +1,176 @@
+.booking {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 68px;
+  }
+
+  .search-results-list__item {
+    margin: 0 auto;
+    margin-bottom: 21px;
+    width: 100%;
+    max-width: 330px;
+  }
+}
+
+.about-doctor {
+  margin-right: 20px;
+  max-width: 580px;
+}
+
+.booking-time {
+  max-width: 375px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 38px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #000;
+  }
+
+  &__btn {
+    width: 100%;
+    line-height: 48px;
+  }
+}
+
+.choose-date {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .choices {
+    margin: 0;
+  }
+
+  .choices__inner {
+    border: none;
+    border-radius: 0;
+    padding: 0 !important;
+    min-width: 100px;
+    min-height: 0;
+    color: var(--color-blue);
+
+    .choices__list {
+      padding-right: 35px;
+    }
+  }
+
+  .choices__list.choices__list--dropdown {
+    z-index: 10;
+    margin-top: 5px;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 160%;
+
+    .choices__item {
+      padding: 0 !important;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 91px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    background-color: rgb(65 75 190 / 12%);
+  }
+}
+
+.choose-date-slider {
+  margin-bottom: 76px;
+}
+
+.choose-date-slide {
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(203 209 218 / 50%);
+    border-radius: 8px;
+    padding: 7px 11px;
+    text-align: center;
+    background-color: rgb(0 0 0 / 0%);
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    &--active {
+      border-color: rgb(65 75 190 / 12%);
+      background-color: rgb(65 75 190 / 12%);
+      pointer-events: none;
+    }
+  }
+
+  &__week-day {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-gray);
+    pointer-events: none;
+  }
+
+  &__number {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-black);
+    pointer-events: none;
+  }
+}
+
+.choose-time {
+  &__title {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 133%;
+    color: #000;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 93px;
+    gap: 20px;
+  }
+
+  &__btn {
+    border: 1px solid #cbd1da;
+    border-radius: 3px;
+    padding: 9px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    color: var(--color-black);
+    transition: background-color 0.2s ease-in-out;
+    user-select: none;
+
+    &--disable {
+      color: var(--color-gray);
+      pointer-events: none;
+    }
+
+    &--active {
+      background-color: rgb(65 75 190 / 12%);
+      pointer-events: none;
+    }
+  }
+}

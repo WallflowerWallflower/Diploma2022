@@ -1,0 +1,54 @@
+<div class="profile">
+  <div class="profile-header" *ngIf="currentDoctor">
+    <h2 class="profile-header__welcome">Welcome, {{currentDoctor.doctorName}} {{currentDoctor.doctorSurname}} !</h2>
+<!--    <a class="profile-header__user">{{currentDoctor.doctorName}} </a>-->
+  </div>
+  <div class="profile-content">
+    <aside class="profile-aside">
+      <a href="#" class="profile-logo">
+        <img src="assets/svg/logo.svg" alt="Logo" class="profile-logo__img">
+        <span class="profile-logo__name">KazMed</span>
+      </a>
+      <nav class="profile-nav">
+        <ul class="list-reset profile-nav__list">
+          <li class="profile-nav__item">
+            <a routerLink="./overview" href="#" class="profile-nav__link">
+              <img class="profile-nav__ico" src="assets/svg/home.svg">
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="profile-nav__item">
+            <a routerLink="./calendar" href="" class="profile-nav__link">
+              <img class="profile-nav__ico" src="assets/svg/file.svg">
+              <span>Appointments</span>
+            </a>
+          </li>
+          <li class="profile-nav__item">
+            <a routerLink="./patients" href="#" class="profile-nav__link">
+              <img class="profile-nav__ico" src="assets/svg/users.svg">
+              <span>Patients</span>
+            </a>
+          </li>
+        </ul>
+        <button class="btn-reset profile-nav__btn" (click)="logOut()">
+          <span>Log out</span>
+          <img class="profile-nav__ico profile-nav__ico--right" src="assets/svg/logout.svg">
+        </button>
+      </nav>
+    </aside>
+    <main class="profile-main">
+      <app-overview *ngIf="isEditable" (submitted)="getValue($event)">
+        <ng-content></ng-content>
+      </app-overview>
+<!--      <div>-->
+<!--        <span class="profile-nav__link" *ngIf="!isEditable">Вы можете изменить свои персональные данные</span>-->
+<!--        <button  class="btn-basic p-15 mt-10" (click)="toggleEditable()">-->
+<!--          {{!isEditable ? 'Изменить':'Назад'}}-->
+<!--        </button>-->
+<!--        <app-modal *ngIf="isModal" [title]="'Ваши данные успешно обновились!'" (closeModal)="closeModal()"></app-modal>-->
+<!--      </div>-->
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+

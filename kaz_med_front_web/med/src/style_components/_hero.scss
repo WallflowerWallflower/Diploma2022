@@ -1,0 +1,14 @@
+.hero {
+  padding-top: 96px;
+  padding-bottom: 217px;
+  background-image: url("../img/hero-bg.png");
+  background-position: center top;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__btn {
+    width: 480px;
+    font-size: 24px;
+    line-height: 71px;
+  }
+}

@@ -1,0 +1,75 @@
+<section class="booking">
+  <div class="container">
+    <div class="about-doctor">
+      <div class="search-results-list__item">
+        <img src="assets/img/icon-doctor-16.jpg" alt="Doctor" class="search-results-list__img">
+        <div class="search-results-list__content">
+          <p class="search-results-list__name">{{currentDoctor.doctorName}}</p>
+          <p class="search-results-list__descr">{{currentDoctor.qualifications}}</p>
+          <p class="search-results-list__location">4km away</p>
+          <p class="search-results-list__raiting">{{currentDoctor.rating}}</p>
+        </div>
+      </div>
+      <div class="card-info__item">
+        <div class="card-info__content">
+          <h3 class="card-info__title">{{"about" | translate}}</h3>
+          <p class="card-info__descr">{{currentDoctor.about}}</p>
+        </div>
+      </div>
+      <div class="card-info__item">
+        <div class="card-info__content">
+          <h3 class="card-info__title">{{"qualifications" | translate}}</h3>
+          <ul class="list-reset card-info-list card-info__descr" >
+            <li class="card-info-list__item">{{currentDoctor.qualifications}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-info__item">
+        <div class="card-info__content">
+          <h3 class="card-info__title">{{ 'Services' | translate }}</h3>
+          <ul class="list-reset card-info-list card-info__descr" *ngFor="let speciality of currentDoctor.specialties">
+            <li class="card-info-list__item">{{speciality.specialtyName}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-info__item">
+        <div class="card-info__content">
+          <h3 class="card-info__title">{{'reviews' | translate }}</h3>
+          <ul class="list-reset card-info-list card-info__descr" *ngFor=" let review of currentDoctor.reviews">
+            <li class="card-info-list__item">{{review}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-info__item">
+        <div class="card-info__content">
+          <h3 class="card-info__title">{{'admission fee' | translate }}</h3>
+          <h5 class="card-info-list__item">{{currentDoctor.fees}}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="booking-time">
+      <h3 class="booking-time__title">{{'booking' | translate }}</h3>
+      <div class="booking-time__choose-date choose-date">
+        <div class="choose-date__top">
+          <form [formGroup]="form">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Choose a date"
+                     formControlName="pickerCtl">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="booking-time__choose-time choose-time">
+        <h4 class="choose-time__title">{{'select time' | translate }}</h4>
+        <div class="choose-time__content" >
+          <button  class="btn-reset choose-time__btn "*ngFor="let time of workTime" (click)="activeToggle($event)" >{{time}}</button>
+        </div>
+      </div>
+      <button type="submit" class="btn-reset btn-basic card-info__btn" [class.disabled]="!isChecked" (click)="reserve()">{{'book appointment' | translate }}</button>
+    </div>
+  </div>
+</section>
+<app-modal *ngIf="isModal" [title]="'Запись к доктору '+currentDoctor.doctorSurname+' оформлена'"  (closeModal)="closeModal()"></app-modal>
+<app-footer></app-footer>

@@ -1,0 +1,186 @@
+.search-results {
+  width: 100%;
+  max-width: 535px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 23px;
+  }
+
+  .choices__inner {
+    border: none;
+    border-bottom: 1px solid var(--color-black);
+    border-radius: none;
+    padding: 0 !important;
+    min-height: 0;
+
+    .choices__list {
+      padding-right: 25px;
+    }
+  }
+
+  .choices__list.choices__list--dropdown {
+    margin-top: 5px;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+    font-size: 14px;
+    line-height: 160%;
+    color: var(--color-blue);
+
+    .choices__item {
+      padding: 0 !important;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0;
+    margin-right: 11px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: var(--color-black);
+  }
+
+  &__results-counter {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #cbd1da;
+  }
+
+  &__sort-caption {
+    margin: 0;
+    margin-right: 23px;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-black);
+  }
+}
+
+.search-results-list {
+  &__item {
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 10px;
+    box-shadow: 0 30px 60px rgb(138 149 158 / 12%);
+    background-color: var(--color-light);
+  }
+
+  &__img {
+    display: block;
+    margin-right: 21px;
+    border-radius: 8px;
+    width: 105px;
+    height: 100px;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: var(--color-black);
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 143%;
+    color: var(--color-gray);
+
+    &--clinics {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 7px;
+    font-size: 12px;
+    line-height: 167%;
+    color: var(--color-gray);
+
+    &::before {
+      content: "";
+      display: block;
+      margin-right: 6px;
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10.45L8.475 7.97501C8.96445 7.48551 9.29776 6.86187 9.43277 6.18294C9.56779 5.50402 9.49846 4.80031 9.23354 4.16078C8.96863 3.52126 8.52002 2.97466 7.94446 2.59009C7.36889 2.20552 6.69222 2.00026 6 2.00026C5.30778 2.00026 4.63111 2.20552 4.05554 2.59009C3.47998 2.97466 3.03137 3.52126 2.76646 4.16078C2.50154 4.80031 2.43221 5.50402 2.56723 6.18294C2.70225 6.86187 3.03555 7.48551 3.525 7.97501L6 10.45ZM6 11.864L2.818 8.68201C2.18867 8.05267 1.76009 7.25084 1.58646 6.37793C1.41284 5.50502 1.50195 4.60022 1.84255 3.77796C2.18315 2.95569 2.75992 2.25289 3.49994 1.75843C4.23996 1.26396 5.10999 1.00005 6 1.00005C6.89001 1.00005 7.76004 1.26396 8.50006 1.75843C9.24008 2.25289 9.81686 2.95569 10.1575 3.77796C10.498 4.60022 10.5872 5.50502 10.4135 6.37793C10.2399 7.25084 9.81133 8.05267 9.182 8.68201L6 11.864ZM6 6.50001C6.26522 6.50001 6.51957 6.39465 6.70711 6.20711C6.89464 6.01958 7 5.76522 7 5.50001C7 5.23479 6.89464 4.98044 6.70711 4.7929C6.51957 4.60536 6.26522 4.50001 6 4.50001C5.73478 4.50001 5.48043 4.60536 5.29289 4.7929C5.10536 4.98044 5 5.23479 5 5.50001C5 5.76522 5.10536 6.01958 5.29289 6.20711C5.48043 6.39465 5.73478 6.50001 6 6.50001ZM6 7.50001C5.46957 7.50001 4.96086 7.28929 4.58579 6.91422C4.21071 6.53915 4 6.03044 4 5.50001C4 4.96957 4.21071 4.46087 4.58579 4.08579C4.96086 3.71072 5.46957 3.50001 6 3.50001C6.53043 3.50001 7.03914 3.71072 7.41421 4.08579C7.78929 4.46087 8 4.96957 8 5.50001C8 6.03044 7.78929 6.53915 7.41421 6.91422C7.03914 7.28929 6.53043 7.50001 6 7.50001Z' fill='%239298A9'/%3E%3C/svg%3E");
+    }
+  }
+
+  &__raiting {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 4px;
+    padding: 0 5px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--color-blue);
+    background-color: rgb(65 75 190 / 12%);
+
+    &::before {
+      content: "";
+      display: block;
+      margin-right: 3px;
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.95944 7.16006C8.82994 7.28556 8.77044 7.46706 8.79994 7.64506L9.24444 10.1051C9.28194 10.3136 9.19394 10.5246 9.01944 10.6451C8.84844 10.7701 8.62094 10.7851 8.43444 10.6851L6.21994 9.53006C6.14294 9.48906 6.05744 9.46706 5.96994 9.46456H5.83444C5.78744 9.47156 5.74144 9.48656 5.69944 9.50956L3.48444 10.6701C3.37494 10.7251 3.25094 10.7446 3.12944 10.7251C2.83344 10.6691 2.63594 10.3871 2.68444 10.0896L3.12944 7.62956C3.15894 7.45006 3.09944 7.26756 2.96994 7.14006L1.16444 5.39006C1.01344 5.24356 0.960938 5.02356 1.02994 4.82506C1.09694 4.62706 1.26794 4.48256 1.47444 4.45006L3.95944 4.08956C4.14844 4.07006 4.31444 3.95506 4.39944 3.78506L5.49444 1.54006C5.52044 1.49006 5.55394 1.44406 5.59444 1.40506L5.63944 1.37006C5.66294 1.34406 5.68994 1.32256 5.71994 1.30506L5.77444 1.28506L5.85944 1.25006H6.06994C6.25794 1.26956 6.42344 1.38206 6.50994 1.55006L7.61944 3.78506C7.69944 3.94856 7.85494 4.06206 8.03444 4.08956L10.5194 4.45006C10.7294 4.48006 10.9049 4.62506 10.9744 4.82506C11.0399 5.02556 10.9834 5.24556 10.8294 5.39006L8.95944 7.16006Z' fill='%23414BBE'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 28px;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    fill: var(--color-blue);
+    background-color: rgb(65 75 190 / 12%);
+  }
+
+  &__ico {
+    width: 24px;
+    height: 24px;
+    fill: inherit;
+  }
+
+  &__btn {
+    width: 175px;
+    font-size: 16px;
+    line-height: 36px;
+  }
+}

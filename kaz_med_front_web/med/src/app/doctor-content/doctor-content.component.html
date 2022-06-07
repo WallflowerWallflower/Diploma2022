@@ -1,0 +1,98 @@
+<section class="doctors">
+  <div class="container">
+    <div class="doctors__content">
+      <div class="search-results">
+        <div class="search-results__top">
+          <div class="search-results__column">
+            <h3 class="search-results__title">{{"Top doctors" | translate}}</h3>
+            <p class="search-results__results-counter">{{doctors.length}} {{"Results" | translate}}</p>
+          </div>
+          <div class="search-results__column">
+            <p class="search-results__sort-caption">{{"Sort by:" | translate}}</p>
+            <select name="sort" class="search-results__sort" (change)="selectFilter($event)">
+              <option value="rating">{{"ratings" | translate}}</option>
+              <option value="price-decrease">{{"Price(decrease)" | translate}}</option>
+              <option value="price-increase">{{"Price(increase)" | translate}}</option>
+              <option value="experience">{{"Experience" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <ul class="list-reset search-results-list" *ngFor="let doctor of doctors">
+          <li class="search-results-list__item">
+            <img src="assets/img/icon-doctor-16.jpg" alt class="search-results-list__img">
+            <div class="search-results-list__content">
+              <p class="search-results-list__name">{{doctor.doctorName}} {{doctor.doctorSurname}}</p>
+              <p class="search-results-list__descr">{{doctor.qualifications}}</p>
+              <p class="search-results-list__location">4km away</p>
+              <p class="search-results-list__raiting">{{doctor.rating}}</p>
+            </div>
+            <div class="search-results-list__bottom">
+              <button href="#" class="btn-reset btn-basic search-results-list__btn" (click)="chooseDoctor(doctor)"> {{"book appointment" | translate}}</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-info" *ngIf="isDoctorSelected">
+        <div class="search-results-list__item" style="max-width: 330px; margin: 0 auto; margin-bottom: 21px;">
+          <img src="assets/img/icon-doctor-16.jpg" alt class="search-results-list__img">
+          <div class="search-results-list__content">
+            <p class="search-results-list__name">{{selectedDoctor.doctorName}}</p>
+            <p class="search-results-list__descr">{{selectedDoctor.qualifications}}</p>
+            <p class="search-results-list__location">4km away</p>
+            <p class="search-results-list__raiting">{{selectedDoctor.rating}}</p>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{"about" | translate}}</h3>
+            <p class="card-info__descr">{{selectedDoctor.about}}</p>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{"qualifications" | translate}}</h3>
+            <ul class="list-reset card-info-list card-info__descr">
+              <li class="card-info-list__item">{{selectedDoctor.qualifications}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">  {{ 'Services' | translate }}</h3>
+            <ul class="list-reset card-info-list card-info__descr" *ngFor="let speciality of selectedDoctor.specialties">
+              <li class="card-info-list__item">{{speciality.specialtyName}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{'reviews' | translate }}</h3>
+            <ul class="list-reset card-info-list card-info__descr" *ngFor=" let review of selectedDoctor.reviews">
+              <li class="card-info-list__item">{{selectedDoctor.review}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{'admission fee' | translate }}</h3>
+            <p class="card-info__descr">{{selectedDoctor.fees}}</p>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{'review' | translate }}</h3>
+            <input class="profile-info__input--big" [(ngModel)]="review">
+          </div>
+        </div>
+        <div class="card-info__bottom">
+<!--          <a href="#" class="btn-reset btn-basic&#45;&#45;light card-info__btn&#45;&#45;light">Send message</a>-->
+          <a routerLink="/booking" class="btn-reset btn-basic card-info__btn" (click)="sendSelectedDoctor()">
+            {{"book appointment" | translate}}</a>
+          <button href="#" class=" btn-basic card-info__btn" (click)="setFeedback(selectedDoctor)"> {{"set review" | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-modal *ngIf="isModal" [title]="'Благодарим за ваш отзыв'"  (closeModal)="closeModal()"></app-modal>
+<app-footer></app-footer>

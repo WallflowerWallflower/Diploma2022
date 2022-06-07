@@ -1,0 +1,60 @@
+<div class="auth-page">
+  <div class="container">
+    <div class="flex">
+      <a href="#" class="auth-page__home-link">
+        <img src="assets/svg/logo.svg" alt="Logo" class="auth-page__logo">
+        <span class="auth-page__company-name">KazMed</span>
+      </a>
+      <nav class="header-nav">
+        <button  class="lang" (click)="switchLang('en')">EN</button>
+        <button  class="lang" (click)="switchLang('kz')">KZ</button>
+        <button  class="lang"(click)="switchLang('rus')">RUS</button>
+      </nav>
+    </div>
+    <form action="#" [formGroup]="loginForm" class="auth-page__form auth-form" (ngSubmit)="onSubmit()">
+      <div class="auth-form-top">
+        <img src="assets/img/lock.png" alt class="auth-form-top__img">
+        <div class="auth-form-top__content">
+            <span class="auth-form-top__caption">{{"welcome back!" | translate}}</span>
+            <span class="auth-form-top__descr">{{"enter your credentials to continue" | translate}}</span>
+        </div>
+      </div>
+      <div *ngIf="!isRegister" class="auth-form-top">
+        <span class="auth-form-top__caption">You're not registered!</span>
+      </div>
+      <div class="auth-form__field">
+        <input
+          type="email" name="email" class="input-reset auth-form__input" id="Email"
+          placeholder="email@email.com"
+          [class.invalid]=" loginForm.controls['email'].invalid && loginForm.controls['email'].touched"
+          formControlName="email"
+          required>
+        <label for="Email" class="auth-form__placeholder">Email</label>
+      </div>
+      <div class="auth-form__field">
+        <input
+          placeholder="Min 5 chars"
+          formControlName="password"
+          [class.invalid]=" loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+          type="password" class="input-reset auth-form__input" id="Password" required>
+        <label for="Password" class="auth-form__placeholder">Password</label>
+      </div>
+      <div class="auth-form__field">
+        <label class="auth-form-top__descr">{{"Select your role" | translate}}</label>
+        <select class="role" formControlName="role">
+          <option [ngValue]=""></option>
+          <option [ngValue]="">MED_CENTER</option>
+          <option [ngValue]="">USER</option>
+          <option [ngValue]="">DOCTOR</option>
+          <option [ngValue]="">ADMIN</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-reset btn-basic auth-form__btn" [disabled]="loginForm.invalid"  [class.disabled]="!loginForm.valid">{{"login" | translate}}</button>
+      <a routerLink="/password" class="auth-form__password-recovery">{{"forgot password" | translate}}</a>
+  <p href="#" class="auth-form__link-to-register">{{"don´t have an account" | translate}} <a routerLink="/reg_page">{{"sign up" | translate}}</a></p>
+  </form>
+  </div>
+</div>
+<div *ngIf="isLoading" class="loading">
+  <img src="assets/svg/Spinner-0.8s-221px.svg" alt="">
+</div>

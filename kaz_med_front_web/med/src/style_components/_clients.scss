@@ -1,0 +1,92 @@
+.clients {
+  &__container {
+    padding-bottom: 201px;
+    background-image: url("../img/quote.png");
+    background-position: 98% 95px;
+    background-repeat: no-repeat;
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+  }
+
+  &__descr {
+    margin-bottom: 88px;
+  }
+}
+
+.clients-slide {
+  &__content {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 40px 40px 16px;
+    box-shadow: 0 30px 60px rgb(146 152 169 / 12%);
+    background-color: var(--color-light);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: var(--color-black);
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 171%;
+    text-align: center;
+    color: var(--color-black);
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Manrope", sans-serif;
+  }
+
+  &__img {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 156%;
+  }
+
+  &__info {
+    font-size: 14px;
+    line-height: 171%;
+    color: var(--color-gray);
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 76px;
+
+  &-bullet {
+    @include mr(15px);
+
+    outline: 3px solid rgb(0 0 0 / 0%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-blue);
+    opacity: 1;
+    transition: outline-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    &-active {
+      outline-color: var(--color-blue);
+      background-color: rgb(0 0 0 / 0%);
+    }
+  }
+}

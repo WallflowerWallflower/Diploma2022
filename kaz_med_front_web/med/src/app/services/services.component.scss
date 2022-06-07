@@ -1,0 +1,56 @@
+@import "src/style_components/search-results";
+.services{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  max-width: 1200px;
+}
+.items{
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1 1 500px;
+}
+.item{
+  padding: 10px 0;
+  max-width: 600px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #9298A9;
+  cursor: pointer;
+}
+.item:hover{
+  color:  #414BBE;;
+}
+.pages{
+  margin: 30px auto;
+  font-family: "Poppins", sans-serif;
+  color: #414BBE;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 7px 20px;
+  display: flex;
+  justify-content: flex-start;
+  background: #FFFFFF;
+  box-shadow: 0 30px 60px rgba(138, 149, 158, 0.12);
+  border-radius: 10px;
+}
+.page-item{
+  width: 33px;
+  height: 33px;
+  margin: 0 7px;
+}
+li{
+  text-align: center;
+  list-style: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  background: rgba(65, 75, 190, 0.12);
+}
+.page-item:hover{
+  color: #414BBE;
+}

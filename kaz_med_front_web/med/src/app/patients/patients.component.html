@@ -1,0 +1,19 @@
+<span class="profile-nav__link mb-20">Список Ваших пациентов</span>
+<ng-container  *ngFor="let patient of appointments">
+  <table>
+    <tr>
+      <th>Patient name</th>
+      <th>Patient surname</th>
+      <th>Patient email</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+    <tr >
+      <td>{{patient.customer.customerName}}</td>
+      <td>{{patient.customer.customerSurname}}</td>
+      <td>{{patient.customer.email}}</td>
+      <td>{{date}}</td>
+      <td>{{patient.time}}</td>
+    </tr>
+  </table>
+</ng-container>

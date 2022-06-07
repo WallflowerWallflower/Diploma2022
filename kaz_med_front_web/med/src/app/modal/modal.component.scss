@@ -1,0 +1,25 @@
+.modal{
+  position: absolute;
+  top:150px;
+  left: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  max-width: 350px;
+  padding: 40px;
+  box-shadow: rgb(65, 75, 190) 0px 20px 30px -10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 29px;
+  color: var(--color-black);
+  z-index: 100;
+  background-color: #fff;
+}
+button{
+  padding: 10px;
+  max-width: 50px;
+  margin: 0 auto;
+  margin-top: 40px;
+  cursor: pointer;
+}

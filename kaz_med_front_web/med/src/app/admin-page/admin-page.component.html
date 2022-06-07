@@ -1,0 +1,36 @@
+<div class="profile">
+  <div class="profile-header">
+    <h2 class="profile-header__welcome">Welcome,  !</h2>
+    <a class="profile-header__user">Dr.</a>
+  </div>
+  <div class="profile-content">
+    <aside class="profile-aside">
+      <a href="#" class="profile-logo">
+        <img src="assets/svg/logo.svg" alt="Logo" class="profile-logo__img">
+        <span class="profile-logo__name">KazMed</span>
+      </a>
+      <nav class="profile-nav">
+        <ul class="list-reset profile-nav__list">
+          <li class="profile-nav__item">
+            <a routerLink="./addClinic" href="#" class="profile-nav__link">
+              <img class="profile-nav__ico" src="assets/svg/home.svg">
+              <span>My clinic</span>
+            </a>
+          </li>
+          <li class="profile-nav__item">
+            <a routerLink="./calendar" href="" class="profile-nav__link">
+              <img class="profile-nav__ico" src="assets/svg/file.svg">
+              <span>Doctors</span>
+            </a>
+          </li>
+        </ul>
+        <button class="btn-reset profile-nav__btn" (click)="logOut()">
+          <span>Log out</span>
+          <img class="profile-nav__ico profile-nav__ico--right" src="assets/svg/logout.svg">
+        </button>
+      </nav>
+    </aside>
+  <router-outlet></router-outlet>
+  </div>
+</div>
+

@@ -1,0 +1,95 @@
+<section class="clinics">
+  <div class="container">
+    <div class="clinics__content">
+      <div class="search-results">
+        <div class="search-results__top">
+          <div class="search-results__column">
+            <h3 class="search-results__title">{{"Top clinics" | translate}}</h3>
+            <p class="search-results__results-counter">{{clinics.length}} {{"Results" | translate}}</p>
+          </div>
+          <div class="search-results__column">
+            <p class="search-results__sort-caption">{{"Sort by:" | translate}}</p>
+            <select name="sort" class="search-results__sort" (change)="selectFilter($event)">
+              <option value="raiting">{{"ratings" | translate}}</option>
+              <option value="price-decrease">{{"Price(decrease)" | translate}}</option>
+              <option value="price-increase">{{"Price(increase)" | translate}}</option>
+              <option value="experience">{{"Experience" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <ul class="list-reset search-results-list" *ngFor="let clinic of clinics">
+          <li class="search-results-list__item">
+            <img src="assets/svg/clinic-history-paper-svgrepo-com.svg" alt class="search-results-list__img">
+            <div class="search-results-list__content">
+              <p class="search-results-list__name">{{clinic.medCenterName}}</p>
+              <p class="search-results-list__descr search-results-list__descr--clinics">{{clinic.medCenterAddress}}</p>
+              <p class="search-results-list__raiting">{{clinic.rating}}</p>
+            </div>
+            <div class="search-results-list__bottom">
+              <button class="btn-reset btn-basic search-results-list__btn" (click)="toggleInfo(clinic) ">{{"More about clinic" | translate}}</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card-info" *ngIf="isClinicSelected">
+        <div class="search-results-list__item" style="max-width: 360px; margin: 0 auto; margin-bottom: 21px;">
+          <img src="assets/svg/clinic-history-paper-svgrepo-com.svg" alt class="search-results-list__img">
+          <div class="search-results-list__content">
+            <p class="search-results-list__name">{{selectedClinic.medCenterName}}</p>
+            <p class="search-results-list__descr search-results-list__descr--clinics">{{selectedClinic.medCenterAddress}}</p>
+            <p class="search-results-list__raiting">{{selectedClinic.rating}}</p>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{"about" | translate}}</h3>
+            <p class="card-info__descr">{{selectedClinic.about}}</p>
+          </div>
+          <button class="btn-reset card-info__btn-more">
+            <img src="assets/svg/arrow-more.svg" class="card-info__ico">
+          </button>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{"admission fee" | translate}}</h3>
+            <ul class="list-reset card-info-list card-info__descr" >
+              <li class="card-info-list__item">{{selectedClinic.fees}}</li>
+            </ul>
+          </div>
+          <button class="btn-reset card-info__btn-more">
+            <img src="assets/svg/arrow-more.svg" class="card-info__ico">
+          </button>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">  {{ 'Services' | translate }}</h3>
+            <ul class="list-reset card-info-list card-info__descr" *ngFor=" let service of selectedClinic.services">
+              <li class="card-info-list__item">{{service}}</li>
+            </ul>
+          </div>
+          <button class="btn-reset card-info__btn-more">
+            <img src="assets/svg/arrow-more.svg" class="card-info__ico">
+          </button>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{ 'Doctors' | translate }}</h3>
+            <ul class="list-reset card-info-list card-info__descr" *ngFor=" let doctor of  selectedClinic.doctors">
+              <li routerLink="/doctors" class="card-info-list__item linked">
+               {{doctor.doctorName}} {{doctor.doctorSurname}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-info__item">
+          <div class="card-info__content">
+            <h3 class="card-info__title">{{ 'reviews' | translate }}</h3>
+            <ul class="list-reset card-info-list card-info__descr" *ngFor=" let review of selectedClinic.reviews">
+              <li class="card-info-list__item">{{review}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

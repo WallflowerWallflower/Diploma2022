@@ -1,0 +1,83 @@
+<div class="register-page">
+  <div class="container">
+    <div class="flex">
+      <a href="#" class="register-page__home-link">
+        <img src="assets/svg/logo.svg" alt="Logo" class="register-page__logo">
+        <span class="register-page__company-name">KazMed</span>
+      </a>
+      <nav class="header-nav">
+        <button  class="lang" (click)="switchLang('en')">EN</button>
+        <button  class="lang" (click)="switchLang('kz')">KZ</button>
+        <button  class="lang"(click)="switchLang('rus')">RUS</button>
+      </nav>
+    </div>
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()" class="register-page__form register-form">
+      <div class="register-form-top">
+        <img src="assets/img/lock.png" alt class="register-form-top__img">
+        <div class="register-form-top__content">
+          <span class="register-form-top__caption">{{"sign up" | translate}}.</span>
+          <span class="register-form-top__descr">{{"enter your credentials to continue" | translate}}</span>
+        </div>
+      </div>
+      <div class="register-form__row" >
+        <div class="register-form__field">
+          <input formControlName="name"
+                 placeholder="Min 3 chars"
+                 type="text"
+                 name="name"
+                 [class.invalid]=" regForm.controls['name'].invalid && regForm.controls['name'].touched"
+                 class="input-reset register-form__input"
+                 id="Name"
+          >
+          <label for="Name" class="register-form__placeholder" >First name</label>
+        </div>
+        <div class="register-form__field">
+          <input formControlName="lastName"
+                 type="text"
+                 name="surname"
+                 class="input-reset register-form__input"
+                 placeholder="Min 3 chars"
+                 [class.invalid]=" regForm.controls['lastName'].invalid && regForm.controls['lastName'].touched"
+                 id="Surname"
+                 required>
+          <label for="Surname" class="register-form__placeholder">Last name</label>
+        </div>
+      </div>
+      <div class="register-form__field">
+        <input formControlName="email"
+               type="email"
+               name="email"
+               class="input-reset register-form__input"
+               [class.invalid]=" regForm.controls['email'].invalid && regForm.controls['email'].touched"
+               id="Email"
+               placeholder="email@email.com"
+               required >
+        <label for="Email" class="register-form__placeholder">Email</label>
+      </div>
+      <div class="register-form__field">
+        <input formControlName="password"
+               type="text"
+               name="password"
+               class="input-reset register-form__input"
+               id="Password"
+               placeholder="Min 5 chars"
+               [class.invalid]=" regForm.controls['password'].invalid && regForm.controls['password'].touched"
+               required>
+        <label for="Password" class="register-form__placeholder">Password</label>
+      </div>
+      <div class="register-form__field">
+        <label class="register-form-top__descr">{{"Select your role" | translate}}</label>
+        <select class="role" formControlName="role">
+          <option [ngValue]=""></option>
+          <option [ngValue]="">MED_CENTER</option>
+          <option [ngValue]="">USER</option>
+          <option [ngValue]="">DOCTOR</option>
+          <option [ngValue]="">ADMIN</option>
+        </select>
+      </div>
+      <p class="register-form__notice">{{"by continuing you agree to our" | translate}} <a href="#">{{"terms of Service" | translate}}</a> <a href="#">{{"and privacy policy" | translate}}</a>.</p>
+      <button type="submit" class="btn-reset btn-basic register-form__btn" [disabled]="regForm.invalid"  [class.disabled]="!regForm.valid">{{"login" | translate}}</button>
+      <p href="#" class="register-form__link-to-register">{{"already have an account" | translate}}? <a routerLink="/login_page">{{"login" | translate}}</a></p>
+    </form>
+  </div>
+</div>
